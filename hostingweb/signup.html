@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+		<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Sign Up — SimpleSite</title>
+		<style>
+		/* Inlined styles (same as index) */
+		:root{--bg:#f6f8fb; --card:#ffffff; --accent:#2563eb; --muted:#6b7280; --radius:10px}
+		*{box-sizing:border-box}
+		html,body{height:100%}
+		body{margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:var(--bg); color:#0f172a}
+		.container{max-width:1000px;margin:0 auto;padding:1rem}
+		.site-header{background:linear-gradient(90deg,#fff, #fbfdff);box-shadow:0 1px 0 rgba(15,23,42,0.04)}
+		.nav-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0.6rem 0}
+		.brand{font-weight:700;color:var(--accent);text-decoration:none;font-size:1.1rem}
+		.nav{display:flex;gap:0.75rem}
+		.nav a{color:var(--muted);text-decoration:none;padding:0.4rem 0.6rem;border-radius:6px}
+		.nav a:hover{background:rgba(37,99,235,0.06);color:var(--accent)}
+		.nav-checkbox{display:none}
+		.nav-toggle{display:none;background:transparent;border:0;font-size:1.25rem;cursor:pointer}
+		.hero{padding:3rem 0;text-align:center}
+		.hero h1{font-size:2rem;margin:0 0 0.5rem}
+		.hero p{color:var(--muted);margin:0 0 1rem}
+		.cta-row{margin-top:1rem}
+		.btn{display:inline-block;background:var(--accent);color:#fff;padding:0.6rem 1rem;border-radius:8px;text-decoration:none}
+		.btn.ghost{background:transparent;border:1px solid rgba(15,23,42,0.06);color:var(--accent);margin-left:0.5rem}
+		.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;padding:2rem 0}
+		.features article{background:var(--card);padding:1rem;border-radius:var(--radius);box-shadow:0 6px 18px rgba(15,23,42,0.03)}
+		.site-footer{padding:1rem 0;color:var(--muted)}
+		.auth-page{display:flex;justify-content:center;align-items:center;padding:3rem 0}
+		.card{background:var(--card);padding:1.25rem;border-radius:12px;box-shadow:0 8px 30px rgba(15,23,42,0.04)}
+		.auth-card{width:100%;max-width:420px}
+		.auth-card h2{margin-top:0}
+		.auth-card label{display:block;margin:0.6rem 0;color:#0f172a}
+		.auth-card input{width:100%;padding:0.6rem;border:1px solid #e6eef8;border-radius:8px;margin-top:0.35rem}
+		.form-row{display:flex;align-items:center;justify-content:space-between;margin-top:1rem;gap:0.5rem}
+		.link{color:var(--accent);text-decoration:none;font-size:0.95rem}
+		@media (max-width:640px){.nav{position:absolute;right:1rem;top:60px;background:var(--card);flex-direction:column;padding:0.5rem;border-radius:8px;display:none}.nav-toggle{display:block}.nav-checkbox:checked ~ .nav{display:flex}.hero h1{font-size:1.5rem}}
+		</style>
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="container nav-row">
+				<a class="brand" href="index.html">SimpleSite</a>
+				<input type="checkbox" id="navToggle" class="nav-checkbox" />
+				<label for="navToggle" class="nav-toggle" aria-label="Toggle navigation">☰</label>
+				<nav class="nav">
+					<a href="index.html">Home</a>
+					<a href="login.html">Login</a>
+				</nav>
+			</div>
+		</header>
+
+		<main class="container auth-page">
+			<form id="signupForm" class="card auth-card" novalidate>
+				<h2>Create Account</h2>
+				<label>
+					Full name
+					<input type="text" name="name" required />
+				</label>
+				<label>
+					Email
+					<input type="email" name="email" required />
+				</label>
+				<label>
+					Password
+					<input type="password" name="password" required minlength="6" />
+				</label>
+				<div class="form-row">
+					<button class="btn" type="submit">Sign Up</button>
+					<a class="link" href="login.html">Have an account?</a>
+				</div>
+			</form>
+		</main>
+
+		<footer class="site-footer">
+			<div class="container">
+				<p>© SimpleSite</p>
+			</div>
+		</footer>
+	</body>
+</html>

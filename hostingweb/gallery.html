@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Image Slider — SimpleSite</title>
+    <style>
+      :root{--accent:#2563eb;--muted:#6b7280}
+      *{box-sizing:border-box}
+      body{margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;background:#f6f8fb;color:#0f172a}
+      .container{max-width:1000px;margin:0 auto;padding:1rem}
+      .site-header{background:#fff;padding:0.6rem 0;box-shadow:0 1px 0 rgba(15,23,42,0.04)}
+      .brand{font-weight:700;color:var(--accent);text-decoration:none}
+
+      /* Slider layout */
+      .slider-wrap{position:relative;overflow:hidden;border-radius:12px;box-shadow:0 12px 30px rgba(15,23,42,0.06);background:#000}
+      .slides{display:flex;width:500%;animation:slide 20s linear infinite}
+      .slide{flex:1 0 100%;min-height:320px;position:relative}
+      .slide img{width:100%;height:420px;object-fit:cover;display:block}
+      .caption{position:absolute;left:1rem;bottom:1rem;padding:0.5rem 0.75rem;background:rgba(0,0,0,0.45);color:#fff;border-radius:8px;font-weight:600}
+
+      /* Pause animation on hover */
+      .slider-wrap:hover .slides{animation-play-state:paused}
+
+      /* Dots (manual indicator only) */
+      .dots{display:flex;gap:0.5rem;justify-content:center;margin-top:0.75rem}
+      .dot{width:10px;height:10px;border-radius:50%;background:#d1d5db}
+
+      @keyframes slide{
+        0%{transform:translateX(0%)}
+        20%{transform:translateX(0%)}
+        25%{transform:translateX(-100%)}
+        45%{transform:translateX(-100%)}
+        50%{transform:translateX(-200%)}
+        70%{transform:translateX(-200%)}
+        75%{transform:translateX(-300%)}
+        95%{transform:translateX(-300%)}
+        100%{transform:translateX(-400%)}
+      }
+
+      @media (max-width:720px){.slide img{height:220px}}
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container" style="display:flex;align-items:center;justify-content:space-between">
+        <a class="brand" href="index.html">SimpleSite</a>
+        <nav aria-label="main navigation">
+          <a href="index.html" style="color:var(--muted);text-decoration:none;margin-right:0.5rem">Home</a>
+          <a href="login.html" style="color:var(--muted);text-decoration:none;margin-right:0.5rem">Login</a>
+          <a href="signup.html" style="color:var(--muted);text-decoration:none">Sign Up</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container" style="padding:2rem 1rem">
+      <h1>Image Slider (CSS-only)</h1>
+      <p style="color:var(--muted)">This slider uses pure CSS animation. Hover to pause.</p>
+
+      <div class="slider-wrap" aria-roledescription="carousel">
+        <div class="slides">
+          <div class="slide">
+            <img src="https://picsum.photos/id/1015/1600/900" alt="Mountain lake">
+            <div class="caption">Mountain Lake</div>
+          </div>
+          <div class="slide">
+            <img src="https://picsum.photos/id/1025/1600/900" alt="Puppy close-up">
+            <div class="caption">Puppy</div>
+          </div>
+          <div class="slide">
+            <img src="https://picsum.photos/id/1035/1600/900" alt="Desert dunes">
+            <div class="caption">Desert Dunes</div>
+          </div>
+          <div class="slide">
+            <img src="https://picsum.photos/id/1043/1600/900" alt="Forest path">
+            <div class="caption">Forest Path</div>
+          </div>
+          <div class="slide">
+            <img src="https://picsum.photos/id/1050/1600/900" alt="City skyline">
+            <div class="caption">City Skyline</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dots" aria-hidden="true">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </main>
+  </body>
+</html>

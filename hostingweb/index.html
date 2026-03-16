@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>SimpleSite — Home</title>
+        <style>
+        :root{--bg:#f6f8fb; --card:#ffffff; --accent:#2563eb; --muted:#6b7280; --radius:10px}
+        *{box-sizing:border-box}
+        html,body{height:100%}
+        body{margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:var(--bg); color:#0f172a}
+        .container{max-width:1000px;margin:0 auto;padding:1rem}
+        .site-header{background:linear-gradient(90deg,#fff, #fbfdff);box-shadow:0 1px 0 rgba(15,23,42,0.04)}
+        .nav-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0.6rem 0}
+        .brand{font-weight:700;color:var(--accent);text-decoration:none;font-size:1.1rem}
+        .nav{display:flex;gap:0.75rem}
+        .nav a{color:var(--muted);text-decoration:none;padding:0.4rem 0.6rem;border-radius:6px}
+        .nav a:hover{background:rgba(37,99,235,0.06);color:var(--accent)}
+        .nav-checkbox{display:none}
+        .nav-toggle{display:none;background:transparent;border:0;font-size:1.25rem;cursor:pointer}
+
+        /* Hero + slideshow background */
+        .hero{padding: 200px 10px;text-align:center;position:relative;overflow:hidden}
+        .hero > .container{position:relative;z-index:2}
+        .bg-slideshow{position:absolute;inset:0;z-index:0}
+        .bg-slide{position:absolute;inset:0;background-size:cover;background-position:center center;opacity:0;transition:opacity .6s linear}
+        .bg-slide:nth-child(1){animation:fade 15s infinite;animation-delay:0s}
+        .bg-slide:nth-child(2){animation:fade 15s infinite;animation-delay:-3s}
+        .bg-slide:nth-child(3){animation:fade 15s infinite;animation-delay:-6s}
+        .bg-slide:nth-child(4){animation:fade 15s infinite;animation-delay:-9s}
+        .bg-slide:nth-child(5){animation:fade 15s infinite;animation-delay:-12s}
+        @keyframes fade{0%{opacity:0}4%{opacity:1}20%{opacity:1}24%{opacity:0}100%{opacity:0}}
+
+        .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;align-items:stretch}
+        .gallery .card{position:relative;overflow:hidden;border-radius:12px;box-shadow:0 8px 24px rgba(15,23,42,0.06);background:var(--card)}
+        .gallery img{width:100%;height:220px;object-fit:cover;display:block;transition:transform .35s ease}
+        .gallery .overlay{position:absolute;left:0;right:0;bottom:0;padding:0.75rem;color:#fff;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.45));transform:translateY(100%);display:flex;align-items:flex-end;justify-content:center;transition:transform .28s ease}
+        .gallery .card:hover img{transform:scale(1.08) translateZ(0)}
+        .gallery .card:hover .overlay{transform:translateY(0)}
+        .gallery .caption{font-weight:600;letter-spacing:0.2px}
+
+        .features{padding:2rem 0}
+        .feature-images{display:flex;gap:1rem;justify-content:center;align-items:center;flex-wrap:wrap}
+        .feature-images img{width:32%;height:200px;object-fit:cover;border-radius:8px;border:0;background:transparent}
+        @media (max-width:720px){.feature-images img{width:48%;height:140px}}
+        .site-footer{padding:1rem 0;color:var(--muted)}
+
+        @media (max-width:640px){.nav{position:absolute;right:1rem;top:60px;background:var(--card);flex-direction:column;padding:0.5rem;border-radius:8px;display:none}.nav-toggle{display:block}.nav-checkbox:checked ~ .nav{display:flex}.hero h1{font-size:1.5rem}.gallery img{height:140px}}
+        </style>
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="container nav-row">
+                <a class="brand" href="index.html">SimpleSite</a>
+                <input type="checkbox" id="navToggle" class="nav-checkbox" />
+                <label for="navToggle" class="nav-toggle" aria-label="Toggle navigation">☰</label>
+                <nav class="nav">
+                    <a href="index.html">Home</a>
+                    <a href="login.html">Login</a>
+                    <a href="signup.html">Sign Up</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="bg-slideshow" aria-hidden="true">
+                    <span class="bg-slide" style="background-image:url('images/p1.jpg')"></span>
+                    <span class="bg-slide" style="background-image:url('images/p2(2).jpg')"></span>
+                    <span class="bg-slide" style="background-image:url('images/p3.jpg')"></span>
+                    <span class="bg-slide" style="background-image:url('images/p4.jpeg')"></span>
+                    <span class="bg-slide" style="background-image:url('images/p5(2).jpg')"></span>
+                </div>
+            </section>
+
+            <section class="features container">
+                <div class="feature-images" aria-label="Feature images">
+                    <img src="images/p6 (2).jpg" alt="Royal Purple">
+                    <img src="images/p3.jpg" alt="Sunset Red">
+                    <img src="images/p1.jpg" alt="Fresh Green">
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <p>© 2026 SimpleSite — Built for learning.</p>
+            </div>
+        </footer>
+    </body>
+</html>
